@@ -17,7 +17,7 @@ from calculator import Calculator
 ])
 
 def test_calculator_operations(calculator_op, a, b, expected):
-    '''Test Calculator class operations'''
+    '''Test Calculator class _perform_calculations method'''
     assert calculator_op(a, b) == expected, f"Failed {calculator_op.__name__} operation with {a} and {b}"
 
 def test_calculator_divide_by_zero():
