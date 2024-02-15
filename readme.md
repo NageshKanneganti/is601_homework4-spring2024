@@ -9,6 +9,6 @@ Practice generating custom sample data to test your own code
 3. [User Input] Create a main.py - should contain exception handeling & capture bad input
 
 ## Branches
-1. Faker
+1. Main
 2. Test_Data_Generation
 3. User Input
