@@ -4,6 +4,10 @@
 import pytest
 from calculator import Calculator
 
+def test_calculator_operations(a, b, operation, expected):
+    '''Test Calculator class _perform_calculations method'''
+    assert operation(a, b) == expected, f"Failed {operation.__name__} operation with {a} and {b}"
+
 def test_addition():
     '''Test that calculator add function works '''    
     assert Calculator.add(2,2) == 4
