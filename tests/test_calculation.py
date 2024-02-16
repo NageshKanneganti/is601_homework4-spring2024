@@ -6,17 +6,6 @@ import pytest
 from calculator.calculation import Calculation
 from calculator.operations import Operations as op
 
-@pytest.mark.parametrize("a, b, operation, expected", [
-    (Decimal('2'), Decimal('2'), op.addition, Decimal('4')),  # Test addition
-    (Decimal('2'), Decimal('2'), op.subtraction, Decimal('0.0')),  # Test subtraction
-    (Decimal('2'), Decimal('2'), op.multiplication, Decimal('4.0')),  # Test multiplication
-    (Decimal('2'), Decimal('2'), op.division, Decimal('1.0')),  # Test division
-    (Decimal('2.5'), Decimal('0.5'), op.addition, Decimal('3.0')),  # Test addition with decimals
-    (Decimal('2.5'), Decimal('0.5'), op.subtraction, Decimal('2.0')),  # Test subtraction with decimals
-    (Decimal('2.5'), Decimal('2.0'), op.multiplication, Decimal('5.0')),  # Test multiplication with decimals
-    (Decimal('2.5'), Decimal('0.5'), op.division, Decimal('5.0')),  # Test division with decimals
-])
-
 def test_calculation_operations(a, b, operation, expected):
     ''' Test calculation compute method with various scenarios'''
     calc = Calculation.create_calculation(a, b, operation)
