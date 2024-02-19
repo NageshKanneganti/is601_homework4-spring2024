@@ -5,18 +5,7 @@ from decimal import Decimal
 import pytest
 from calculator.operations import Operations as op
 
-@pytest.mark.parametrize("operation, a, b, expected", [
-    (op.addition, Decimal('2'), Decimal('3'), Decimal('5')),
-    (op.addition, Decimal('0.1'), Decimal('0.2'), Decimal('0.3')),
-    (op.subtraction, Decimal('5'), Decimal('3'), Decimal('2')),
-    (op.subtraction, Decimal('0.3'), Decimal('0.1'), Decimal('0.2')),
-    (op.multiplication, Decimal('2'), Decimal('3'), Decimal('6')),
-    (op.multiplication, Decimal('0.1'), Decimal('0.2'), Decimal('0.02')),
-    (op.division, Decimal('6'), Decimal('3'), Decimal('2')),
-    (op.division, Decimal('0.3'), Decimal('0.1'), Decimal('3'))
-])
-
-def test_operations(operation, a, b, expected):
+def test_operations(a, b, operation, expected):
     '''Tests various operations with parametrized data'''
     assert operation(a, b) == expected, f"Failed {operation.__name__} operation with {a} and {b}"
 
