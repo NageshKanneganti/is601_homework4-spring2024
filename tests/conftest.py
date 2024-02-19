@@ -44,10 +44,3 @@ def pytest_generate_tests(metafunc):
         parameters = list(generate_test_data(num_records))
         modified_parameters = [(a, b, op_name if 'operation_name' in metafunc.fixturenames else op_func, expected) for a, b, op_name, op_func, expected in parameters]
         metafunc.parametrize("a,b,operation,expected", modified_parameters)
-
-# Tests for conftest.py
-def test_pytest_addoption(parser):
-    '''Test the pytest_addoption function'''
-    args = ["--num_records", "10"]
-    namespace = parser.parse_known_args(args)[0]
-    assert namespace.num_records == 10
