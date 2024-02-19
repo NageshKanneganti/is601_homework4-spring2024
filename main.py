@@ -59,6 +59,3 @@ def main():
     operation_name = SYMBOL_TO_OPERATION.get(operation_name, operation_name)
 
     calculate_and_print(a, b, operation_name)
-
-if __name__ == '__main__':
-    main()
